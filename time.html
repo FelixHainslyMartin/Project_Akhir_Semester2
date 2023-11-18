@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: orangered;
+        }
+        
+        div {
+            background-color: whitesmoke;
+        }
+        
+        footer {
+            font-size: 32px;
+        }
+
+        div.left {
+            background-color: orangered;
+        }
+
+        div.left a {
+            text-decoration: none;
+            font-weight: bold;
+            color: black;
+        }
+        
+        .box {
+            display: flex;
+            flex-direction: column;
+            height: calc(100vh - 154px);
+            width: 90%;
+            /* background-color: dodgerblue; */
+            margin: 0 auto;
+            border: 2px solid black;
+        }
+
+        .launch-time {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 100px;
+        }
+
+        .launch-time div p {
+            color: goldenrod;
+            margin: 10px;
+            font-family: 'dancing script';
+            font-size: 20pt;
+            font-size: 60px;
+            margin-bottom: -14px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Time :</h1>
+    <div class="box">
+        <h1>Total waktu yang sudah saya spend untuk membuat website ini: </h1>
+        <div class="launch-time">
+            <div>
+                <p id="days">00</p>
+                <span>Days</span>
+            </div>
+            <div>
+                <p id="hours">00</p>
+                <span>Hours</span>
+            </div>
+            <div>
+                <p id="minutes">00</p>
+                <span>Minutes</span>
+            </div>
+            <div>
+                <p id="seconds">00</p>
+                <span>Seconds</span>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <nav>
+            <div class="left">
+                <a href="Index.html">Back</a>
+            </div>
+        </nav>
+    </footer>
+</body>
+<script>
+    var countDownDate = new Date ("Nov 12, 2023 20:00:00").getTime();
+        var x = setInterval(function(){
+            var now = new Date().getTime();
+            var distance = now - countDownDate;
+
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerHTML = days;
+            document.getElementById("hours").innerHTML = hours;
+            document.getElementById("minutes").innerHTML = minutes;
+            document.getElementById("seconds").innerHTML = seconds;
+
+        }, 1000);
+
+        let body = document.body
+
+        function darkMode() {
+            console.log('halo')
+            body.classList.toggle("dark");
+        }
+</script>
+</html>
