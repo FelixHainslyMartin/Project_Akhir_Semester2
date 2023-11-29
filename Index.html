@@ -29,8 +29,39 @@
             </div>
             </div>
         <div class="right">
-
+            <div class="carousel">
+                <div class="carousel-slide">
+                    <img src="assets3/Picture 1.jpg" alt="Image 1">
+                </div>
+                <div class="carousel-slide">
+                    <img src="assets3/Picture 2.jpg" alt="Image 2">
+                </div>
+                <div class="carousel-slide">
+                    <img src="assets3/Picture 3.jpg" alt="Image 3">
+                </div>
+            </div>
         </div>
     </section>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const slides = document.querySelectorAll(".carousel-slide");
+            let currentSlideIndex = 0;
+
+            function showSlide(index) {
+                slides[currentSlideIndex].style.display = "none";
+                currentSlideIndex = (index + slides.length) % slides.length;
+                slides[currentSlideIndex].style.display = "block";           
+            }
+
+            function nextSlide() {
+                showSlide(currentSlideIndex + 1);
+            }
+
+            showSlide(currentSlideIndex);
+
+            setInterval(nextSlide, 1000);
+        });
+        
+    </script>
 </body>
 </html>

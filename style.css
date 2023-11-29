@@ -84,10 +84,40 @@ margin-left: 35px;
 section.container div.left {
     background: whitesmoke;
 }
+section.container div.right .carousel {
+    width: 88%;
+    height: 71.5vh;
+    overflow: hidden;
+    position: relative;
+    background: gray;
+}
 
-section.container div.right {
-    background: url(assets3/Picture\ 1.jpg) no-repeat center center/cover;
-    
+section.container div.right .carousel-slide {
+    width: 100%;
+    height: 100vh;
+    display: none;
+    position: absolute;
+    animation: slide 5s ease infinite;
+}
+
+section.container div.right .carousel .carousel-slide:nth-child(1){
+    background: url(assets3/Picture\ 1.jpg) no-repeat center center / cover;;
+    background-size: 100vh;
+}
+
+section.container div.right .carousel .carousel-slide:nth-child(2){
+    background: url(assets3/Picture\ 2.jpg) no-repeat center center / cover;;
+    background-size: 100vh;
+}
+
+section.container div.right .carousel .carousel-slide:nth-child(3){
+    background: url(assets3/Picture\ 3.jpg) no-repeat center center / cover;;
+    background-size: 100vh;
+}  
+
+@keyframes slide {
+    0%, 100% {opacity: 0;}
+    10%, 90% {opacity: 1;}
 }
 
 div.clear {
